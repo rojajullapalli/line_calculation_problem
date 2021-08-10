@@ -8,15 +8,14 @@ import java.util.Scanner;
  * calculate length of first line = sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^ 2)
  * A Length of the second line (a1, b1) and (a2, b2)
  * calculate length of second line = sqrt( (a2 - a1) ^ 2 + (b2 - b1) ^ 2)
- * compare length of both lines are equal
+ * compare length of both lines are equal or greater or lesser than other
  *
  * @author : roja
- * @version :1.1
+ * @version :1.2
  * @since :10-08-2021
  **/
 public class Linecomparision {
     public static void main(String[] args) {
-        System.out.println("welcome to line comparision program");
         Scanner sc=new Scanner(System.in);//scanner is used to get input from the user
         System.out.println("enter the values of line1 first co-ordinate x1 and y1");
         //enter the first coordinate value for line1
@@ -43,11 +42,13 @@ public class Linecomparision {
         length1=Math.sqrt(Math.pow(a2-a1,2)+Math.pow(b2-b1,2));//Length of a Line = sqrt( (a2 - a1) ^ 2 + (b2 - b1) ^ 2)
         System.out.println("the calculation of length1 is" +length1);
         /**
-         * checking length of the both lines are equal or not
+         * checking length of the both lines are equal ,greater,lesser than other
          */
         if(length == length1)
-            System.out.println("both lines are equal");
+            System.out.println("length and length1 are equal");
+        else if (length > length1)
+            System.out.println("length is greater than length1");
         else
-            System.out.println("both are not equal");
+            System.out.println("length is greater than length1");
     }
 }
