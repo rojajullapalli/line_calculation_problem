@@ -69,16 +69,13 @@ public class Linecomparision {
         l1.setX2(6);
         l1.setY1(3);
         l1.setY2(6);
-        double a1=l1.getX1();
-        double b1=l1.getY1();
-        double a2=l1.getX2();
-        double b2=l1.getY2();
-        System.out.println("x1 is =" + l1.getX1()+"x2 is = " +l1.getX2()+"y1 = "+l1.getY1()+"y2 = "+l1.getY2());
+        System.out.println(" x1 is =" + l1.getX1()+" x2 is = " +l1.getX2()+" y1 = "+l1.getY1()+" y2 = "+l1.getY2());
         linecmp l2=new linecmp();
         l2.setX1(3);
         l2.setX2(7);
         l2.setY1(6);
         l2.setY2(7);
+        System.out.println(" x1 is =" + l2.getX1()+" x2 is = " +l2.getX2()+" y1 = "+l2.getY1()+" y2 = "+l2.getY2());
         double length1=calculate_length(l1.getX1(),l1.getY1(),l1.getX2(),l1.getY2());
         System.out.println("line1 = " +length1);
         double length2=calculate_length(l2.getX1(),l2.getY1(),l2.getX2(),l2.getY2());
