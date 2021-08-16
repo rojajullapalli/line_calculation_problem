@@ -11,44 +11,78 @@ import java.util.Scanner;
  * compare length of both lines are equal or greater or lesser than other
  *
  * @author : roja
- * @version :1.2
+ * @version :1.3
  * @since :10-08-2021
  **/
+class linecmp{
+    private double x1,y1,x2,y2;
+
+    public double getX1() {
+        return x1;
+    }
+
+    public void setX1(double x1) {
+        this.x1 = x1;
+    }
+
+    public double getY1() {
+        return y1;
+    }
+
+    public void setY1(double y1) {
+        this.y1 = y1;
+    }
+
+    public double getX2() {
+        return x2;
+    }
+
+    public void setX2(double x2) {
+        this.x2 = x2;
+    }
+
+    public double getY2() {
+        return y2;
+    }
+
+    public void setY2(double y2) {
+        this.y2 = y2;
+    }
+}
 public class Linecomparision {
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);//scanner is used to get input from the user
-        System.out.println("enter the values of line1 first co-ordinate x1 and y1");
-        //enter the first coordinate value for line1
-        int x1=sc.nextInt();
-        int y1=sc.nextInt();
-        System.out.println("enter the value of line1 second co-ordinate x2 and y2");
-        //enter the second coordinate value for line1
-        int x2=sc.nextInt();
-        int y2=sc.nextInt();
-        double length;//variable to store length after calculation
-        //A Length as 2 Points (x1, y1) and (x2, y2)
-        length= Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));//Length of a Line = sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^ 2)
-        System.out.println("the calculation of length is " +length);
-        System.out.println("enter the values of line2 first co-ordinate a1 and b1");
-        //enter the first coordinate value for line2
-        int a1= sc.nextInt();
-        int b1= sc.nextInt();
-        System.out.println("enter the values of line2 second co-ordinate a2 and b2");
-        //enter the second coordinate value for line2
-        int a2= sc.nextInt();
-        int b2= sc.nextInt();
-        double length1;//variable to store length after calculation
-        //A Length as 2 Points (a1, b1) and (a2, b2)
-        length1=Math.sqrt(Math.pow(a2-a1,2)+Math.pow(b2-b1,2));//Length of a Line = sqrt( (a2 - a1) ^ 2 + (b2 - b1) ^ 2)
-        System.out.println("the calculation of length1 is" +length1);
-        /**
-         * checking length of the both lines are equal ,greater,lesser than other
-         */
-        if(length == length1)
-            System.out.println("length and length1 are equal");
-        else if (length > length1)
-            System.out.println("length is greater than length1");
+    public static  double calculate_length(double x1,double y1,double x2,double y2) {
+        double length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        return length;
+    }
+    static void compare(double length1, double length2) {
+        if (length1 == length2)
+            System.out.println("length1 is equal to length2");
+        else if (length1 > length2)
+            System.out.println("length1 is greater than length2");
         else
-            System.out.println("length is greater than length1");
+            System.out.println("length1 is shorter than length2");
+    }
+
+    public static void main(String[] args) {
+        linecmp l1=new linecmp();
+        l1.setX1(5);
+        l1.setX2(6);
+        l1.setY1(3);
+        l1.setY2(6);
+        double a1=l1.getX1();
+        double b1=l1.getY1();
+        double a2=l1.getX2();
+        double b2=l1.getY2();
+        System.out.println("x1 is =" + l1.getX1()+"x2 is = " +l1.getX2()+"y1 = "+l1.getY1()+"y2 = "+l1.getY2());
+        linecmp l2=new linecmp();
+        l2.setX1(3);
+        l2.setX2(7);
+        l2.setY1(6);
+        l2.setY2(7);
+        double length1=calculate_length(l1.getX1(),l1.getY1(),l1.getX2(),l1.getY2());
+        System.out.println("line1 = " +length1);
+        double length2=calculate_length(l2.getX1(),l2.getY1(),l2.getX2(),l2.getY2());
+        System.out.println("line2 = " +length2);
+        compare(length1,length2);
     }
 }
